@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esmè Academy — Lash & Esthetics Education | Yorkton, SK</title>
+  <meta name="description" content="Esmè Academy offers professional eyelash extension and esthetics courses in Yorkton, Saskatchewan. Classic, Volume, Lash Lift, Brow Lamination — in-person and virtual options available." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:    #0d0d0d;
+      --charcoal: #1a1a1a;
+      --dark:     #212121;
+      --gold:     #c9a96e;
+      --gold-light: #e2c99a;
+      --white:    #f8f5f0;
+      --muted:    #9a9080;
+      --serif:    'Playfair Display', Georgia, serif;
+      --sans:     'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 5%;
+      background: rgba(13,13,13,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(201,169,110,0.12);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--white); font-style: italic; }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+    .nav-cta {
+      background: transparent !important;
+      border: 1px solid var(--gold) !important;
+      color: var(--gold) !important;
+      padding: 0.45rem 1.3rem !important;
+      opacity: 1 !important;
+      transition: background 0.2s, color 0.2s !important;
+      border-radius: 0 !important;
+    }
+    .nav-cta:hover { background: var(--gold) !important; color: var(--black) !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--white);
+      transition: 0.3s;
+    }
+
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10rem 5% 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 30%, rgba(201,169,110,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,169,110,0.04) 0%, transparent 60%);
+    }
+    .hero-line {
+      display: block;
+      width: 1px; height: 70px;
+      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      margin: 0 auto 2.5rem;
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+    }
+    .hero-title em { font-style: italic; color: var(--gold-light); }
+    .hero-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0 auto 3rem;
+    }
+    .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--black);
+      padding: 0.9rem 2.4rem;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.2s;
+      border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid rgba(201,169,110,0.5);
+      color: var(--gold);
+      padding: 0.9rem 2.4rem;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+      background: transparent; cursor: pointer;
+    }
+    .btn-outline:hover {
+      border-color: var(--gold);
+      background: rgba(201,169,110,0.08);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      opacity: 0.35; font-size: 0.68rem;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted);
+    }
+    .scroll-hint::after {
+      content: '';
+      display: block; width: 1px; height: 40px;
+      background: linear-gradient(to bottom, var(--muted), transparent);
+      animation: scrollPulse 2s infinite;
+    }
+    @keyframes scrollPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+    /* ── SECTIONS ── */
+    section { padding: 7rem 5%; }
+    .section-label {
+      font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400; line-height: 1.2;
+      color: var(--white); margin-bottom: 1.2rem;
+    }
+    .section-title em { font-style: italic; color: var(--gold-light); }
+    .section-body {
+      color: var(--muted); font-size: 0.93rem;
+      max-width: 560px; line-height: 1.9;
+    }
+    .divider { width: 40px; height: 1px; background: var(--gold); margin: 1.4rem 0; }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--charcoal);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .about-stats {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2rem; margin-top: 3rem;
+    }
+    .stat-item { border-left: 1px solid rgba(201,169,110,0.3); padding-left: 1.2rem; }
+    .stat-number { font-family: var(--serif); font-size: 2.2rem; color: var(--gold); line-height: 1; }
+    .stat-label { font-size: 0.72rem; letter-spacing: 0.1em; color: var(--muted); margin-top: 0.3rem; text-transform: uppercase; }
+
+    .about-image-box { position: relative; }
+    .about-image-frame {
+      width: 100%; aspect-ratio: 3/4;
+      background: var(--dark);
+      border: 1px solid rgba(201,169,110,0.2);
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-style: italic;
+      color: rgba(201,169,110,0.3); font-size: 0.9rem;
+    }
+    .about-image-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .about-image-frame::before {
+      content: '';
+      position: absolute; top: -12px; right: -12px;
+      width: 100%; height: 100%;
+      border: 1px solid rgba(201,169,110,0.1);
+      z-index: -1;
+    }
+
+    /* ── ACADEMY ── */
+    #academy { background: var(--black); }
+    .courses-header {
+      display: flex; justify-content: space-between;
+      align-items: flex-end; margin-bottom: 4rem;
+    }
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2px;
+    }
+    .course-card {
+      background: var(--charcoal);
+      padding: 2.5rem;
+      border: 1px solid rgba(201,169,110,0.08);
+      transition: border-color 0.3s, transform 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .course-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .course-card:hover { border-color: rgba(201,169,110,0.3); transform: translateY(-4px); }
+    .course-card:hover::before { opacity: 1; }
+
+    .course-tag { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .course-name { font-family: var(--serif); font-size: 1.45rem; font-weight: 400; color: var(--white); margin-bottom: 0.75rem; line-height: 1.3; }
+    .course-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
+    .course-includes { list-style: none; margin-bottom: 2rem; }
+    .course-includes li {
+      font-size: 0.8rem; color: rgba(248,245,240,0.6);
+      padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .course-includes li::before { content: '—'; color: var(--gold); font-size: 0.7rem; }
+    .course-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 1.5rem; border-top: 1px solid rgba(201,169,110,0.15);
+    }
+    .course-price { font-family: var(--serif); font-size: 1.4rem; color: var(--gold); }
+    .course-price span { font-family: var(--sans); font-size: 0.72rem; color: var(--muted); display: block; font-weight: 300; }
+    .btn-sm {
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(201,169,110,0.4); padding: 0.5rem 1.2rem;
+      transition: 0.2s; white-space: nowrap;
+    }
+    .btn-sm:hover { background: var(--gold); color: var(--black); border-color: var(--gold); }
+
+    .included-banner {
+      background: var(--charcoal);
+      border: 1px solid rgba(201,169,110,0.1);
+      padding: 3rem 5%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem; margin-top: 2px;
+    }
+    .included-item { text-align: center; }
+    .included-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .included-title { font-size: 0.78rem; font-weight: 600; color: var(--white); letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+    .included-sub { font-size: 0.72rem; color: var(--muted); }
+
+    /* ── GALLERY ── */
+    #gallery { background: var(--charcoal); }
+    .gallery-header { margin-bottom: 3rem; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      gap: 4px;
+    }
+    .gallery-item {
+      overflow: hidden; position: relative; cursor: pointer;
+      background: var(--dark);
+    }
+    .gallery-item:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      display: block; transition: transform 0.5s ease;
+      min-height: 200px;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: rgba(201,169,110,0.0);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.3s;
+    }
+    .gallery-item:hover .gallery-overlay { background: rgba(201,169,110,0.12); }
+
+    /* Gallery placeholder (no image) */
+    .gallery-placeholder {
+      width: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-style: italic;
+      color: rgba(201,169,110,0.25); font-size: 0.8rem;
+      background: var(--dark);
+    }
+    .gallery-item:first-child .gallery-placeholder { min-height: 400px; }
+    .gallery-placeholder { min-height: 196px; }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,0.95);
+      display: none; align-items: center; justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
+    .lightbox-close {
+      position: absolute; top: 2rem; right: 2rem;
+      background: none; border: none; color: var(--gold);
+      font-size: 1.5rem; cursor: pointer; opacity: 0.7; transition: opacity 0.2s;
+    }
+    .lightbox-close:hover { opacity: 1; }
+    .lightbox-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: none; border: 1px solid rgba(201,169,110,0.3);
+      color: var(--gold); font-size: 1.2rem;
+      width: 50px; height: 50px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .lightbox-nav:hover { border-color: var(--gold); background: rgba(201,169,110,0.1); }
+    .lightbox-prev { left: 2rem; }
+    .lightbox-next { right: 2rem; }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--black); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px; margin-top: 3.5rem;
+    }
+    .testimonial-card {
+      background: var(--charcoal);
+      border: 1px solid rgba(201,169,110,0.08);
+      padding: 2.2rem;
+      transition: border-color 0.3s;
+    }
+    .testimonial-card:hover { border-color: rgba(201,169,110,0.2); }
+    .stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 0.1em; margin-bottom: 1.2rem; }
+    .testimonial-text {
+      font-family: var(--serif); font-style: italic;
+      font-size: 1rem; color: var(--white);
+      line-height: 1.7; margin-bottom: 1.5rem;
+    }
+    .testimonial-author { display: flex; align-items: center; gap: 0.8rem; }
+    .author-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: rgba(201,169,110,0.15);
+      border: 1px solid rgba(201,169,110,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); color: var(--gold); font-size: 0.9rem;
+    }
+    .author-name { font-size: 0.8rem; font-weight: 600; color: var(--white); }
+    .author-title { font-size: 0.72rem; color: var(--muted); }
+
+    /* ── PROCESS ── */
+    #process { background: var(--charcoal); }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      margin-top: 4rem;
+    }
+    .process-step {
+      padding: 2rem;
+      border-left: 1px solid rgba(201,169,110,0.1);
+      position: relative;
+    }
+    .step-number { font-family: var(--serif); font-size: 3rem; color: rgba(201,169,110,0.15); line-height: 1; margin-bottom: 1rem; }
+    .step-title { font-size: 0.9rem; font-weight: 600; color: var(--white); letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+    .step-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.8; }
+
+    /* ── FAQ ── */
+    #faq { background: var(--black); }
+    .faq-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; margin-top: 3.5rem;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(201,169,110,0.1);
+      border-right: 1px solid rgba(201,169,110,0.05);
+    }
+    .faq-item:nth-child(even) { border-right: none; }
+    .faq-question {
+      width: 100%; background: none; border: none;
+      color: var(--white); text-align: left;
+      padding: 1.6rem 2rem; font-family: var(--sans);
+      font-size: 0.88rem; font-weight: 500; letter-spacing: 0.02em;
+      cursor: pointer; display: flex; justify-content: space-between;
+      align-items: center; gap: 1rem;
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--gold); }
+    .faq-question.open { color: var(--gold); }
+    .faq-icon { color: var(--gold); font-size: 1.2rem; transition: transform 0.3s; flex-shrink: 0; }
+    .faq-question.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s;
+      padding: 0 2rem;
+    }
+    .faq-answer.open { max-height: 300px; padding: 0 2rem 1.5rem; }
+    .faq-answer p { font-size: 0.85rem; color: var(--muted); line-height: 1.9; }
+
+    /* ── BOOK ── */
+    #book { background: var(--dark); text-align: center; }
+    .book-inner { max-width: 700px; margin: 0 auto; }
+    .book-options {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2rem; margin-top: 3.5rem; text-align: left;
+    }
+    .book-card {
+      border: 1px solid rgba(201,169,110,0.18);
+      padding: 2rem; transition: border-color 0.3s;
+    }
+    .book-card:hover { border-color: var(--gold); }
+    .book-card-title { font-family: var(--serif); font-size: 1.2rem; color: var(--white); margin-bottom: 0.5rem; }
+    .book-card-desc { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.8; }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--charcoal);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+    .form-group label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,169,110,0.18);
+      color: var(--white); padding: 0.8rem 1rem;
+      font-family: var(--sans); font-size: 0.875rem; font-weight: 300;
+      outline: none; transition: border-color 0.2s; width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+    .form-group select option { background: var(--dark); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-note { font-size: 0.72rem; color: var(--muted); }
+
+    .contact-info { display: flex; flex-direction: column; gap: 2rem; padding-top: 0.5rem; }
+    .contact-block { display: flex; flex-direction: column; gap: 0.35rem; }
+    .contact-block-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+    .contact-block-value { font-size: 0.95rem; color: var(--white); }
+    .contact-block-sub { font-size: 0.8rem; color: var(--muted); }
+    .social-links { display: flex; gap: 1rem; margin-top: 0.25rem; }
+    .social-link {
+      font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold); text-decoration: none;
+      border-bottom: 1px solid rgba(201,169,110,0.3);
+      padding-bottom: 2px; transition: border-color 0.2s;
+    }
+    .social-link:hover { border-color: var(--gold); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid rgba(201,169,110,0.1);
+      padding: 2.5rem 5%;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--gold); }
+    .footer-logo span { font-style: italic; color: var(--white); }
+    footer p { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.05em; }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a { font-size: 0.72rem; color: var(--muted); text-decoration: none; letter-spacing: 0.08em; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── TOAST ── */
+    .toast {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 500;
+      background: var(--charcoal); border: 1px solid rgba(201,169,110,0.4);
+      color: var(--white); padding: 1rem 1.5rem;
+      font-size: 0.85rem; max-width: 320px;
+      transform: translateY(100px); opacity: 0;
+      transition: transform 0.4s, opacity 0.4s;
+    }
+    .toast.show { transform: translateY(0); opacity: 1; }
+    .toast strong { color: var(--gold); display: block; margin-bottom: 0.2rem; }
+
+    /* ── ANIMATE IN ── */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item:first-child { grid-column: span 2; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .faq-item { border-right: none; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(13,13,13,0.98);
+        align-items: center; justify-content: center;
+        gap: 2.5rem; z-index: 199;
+      }
+      .nav-links.open a { font-size: 1.1rem; }
+      #about, #contact { grid-template-columns: 1fr; gap: 3rem; }
+      .about-image-box { order: -1; }
+      .courses-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .courses-header p { text-align: left; max-width: 100%; }
+      .book-options { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; gap: 3px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lbClose">✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lbPrev">‹</button>
+    <img id="lbImg" src="" alt="" />
+    <button class="lightbox-nav lightbox-next" id="lbNext">›</button>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">
+    <strong>Message Sent ✓</strong>
+    We'll be in touch with you shortly.
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#home" class="nav-logo">Esmè <span>Academy</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#academy">Courses</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#book" class="nav-cta">Book Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-bg"></div>
+    <div style="position:relative;z-index:1;">
+      <span class="hero-line"></span>
+      <p class="hero-eyebrow">Lash & Esthetics Education · Yorkton, Saskatchewan</p>
+      <h1 class="hero-title">
+        Master the Art<br />of <em>Lash Excellence</em>
+      </h1>
+      <p class="hero-sub">
+        Professional eyelash extension training designed for artists who are serious about their craft. Hands-on, intensive, and career-ready.
+      </p>
+      <div class="btn-group">
+        <a href="#academy" class="btn-primary">Explore Courses</a>
+        <a href="#book" class="btn-outline">Book a Session</a>
+      </div>
+    </div>
+    <span class="scroll-hint">Scroll</span>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div>
+      <p class="section-label">Our Story</p>
+      <h2 class="section-title">Education Built on<br /><em>Passion & Precision</em></h2>
+      <div class="divider"></div>
+      <p class="section-body">
+        Esmè Academy was founded by Coralee — a certified lash artist and esthetician with 7 years of hands-on industry experience and 2 years of dedicated teaching. Based in Yorkton, Saskatchewan, her mission is simple: to provide the kind of education she wished she'd had starting out. Intensive, honest, and built around real results.
+      </p>
+      <p class="section-body" style="margin-top:1rem;">
+        Every course is taught personally by Coralee. Whether you're joining in-person or learning on your own time virtually, you get the same dedicated support, quality materials, and certification. Flexible formats designed around your life.
+      </p>
+      <div class="about-stats">
+        <div class="stat-item reveal">
+          <div class="stat-number">7</div>
+          <div class="stat-label">Years in the Industry</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Years Teaching</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-number">Kit</div>
+          <div class="stat-label">Included in Every Course</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-number">Cert.</div>
+          <div class="stat-label">Upon Completion</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-image-box">
+      <div class="about-image-frame">
+        <!-- Swap src for Coralee's photo -->
+        <span>Coralee's Photo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section id="academy">
+    <div class="courses-header">
+      <div>
+        <p class="section-label">Our Programs</p>
+        <h2 class="section-title">Choose Your<br /><em>Course</em></h2>
+      </div>
+      <p style="color:var(--muted);font-size:0.85rem;max-width:280px;text-align:right;">
+        All programs include a professional starter kit, certification, and follow-up support.
+      </p>
+    </div>
+    <!-- CLASSIC -->
+    <div class="courses-grid" style="margin-bottom:2px;">
+      <div class="course-card reveal">
+        <p class="course-tag">Classic · 1:1 In-Person · 2 Days</p>
+        <h3 class="course-name">Classic Lash — Full In-Person</h3>
+        <p class="course-desc">The gold standard. Two full days of 1:1 training with two live models included. Everything hands-on, everything covered. Starter kit worth $300+ included.</p>
+        <ul class="course-includes">
+          <li>2-day intensive, 1:1 with Coralee</li>
+          <li>Two live models included</li>
+          <li>Classic mapping, isolation & application</li>
+          <li>Adhesive chemistry & retention</li>
+          <li>Starter kit ($300+ value) included</li>
+          <li>Certificate of completion</li>
+        </ul>
+        <div class="course-footer">
+          <div class="course-price">$1,400 <span>$500 deposit to book</span></div>
+          <a href="#book" class="btn-sm">Enrol Now</a>
+        </div>
+      </div>
+
+      <div class="course-card reveal">
+        <p class="course-tag">Classic · Hybrid · 1 Day + Virtual</p>
+        <h3 class="course-name">Classic Lash — Hybrid</h3>
+        <p class="course-desc">Textbook and theory on your own time, then one in-person day with two live models. The best of both worlds — flexible learning, real-world practice.</p>
+        <ul class="course-includes">
+          <li>Textbook & theory — self-paced</li>
+          <li>1 in-person day with two models</li>
+          <li>Virtual support throughout</li>
+          <li>Starter kit ($300+ value) included</li>
+          <li>Certificate of completion</li>
+        </ul>
+        <div class="course-footer">
+          <div class="course-price">$1,000 <span>$400 deposit to book</span></div>
+          <a href="#book" class="btn-sm">Enrol Now</a>
+        </div>
+      </div>
+
+      <div class="course-card reveal">
+        <p class="course-tag">Classic · Fully Virtual</p>
+        <h3 class="course-name">Classic Lash — Virtual</h3>
+        <p class="course-desc">Learn entirely on your own schedule. Textbook and kit mailed to you, optional Q&A call after. Complete two models and submit photos/videos for feedback.</p>
+        <ul class="course-includes">
+          <li>Hard copy textbook mailed to you</li>
+          <li>Starter kit ($300+ value) mailed out</li>
+          <li>Optional call to answer questions</li>
+          <li>Submit 2 models via photos/video</li>
+          <li>Certificate of completion</li>
+        </ul>
+        <div class="course-footer">
+          <div class="course-price">$700 <span>Payment in full</span></div>
+          <a href="#book" class="btn-sm">Enrol Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- VOLUME/HYBRID -->
+    <div style="padding:3rem 0 1rem;">
+      <p class="section-label">Volume / Hybrid</p>
+      <h3 class="section-title" style="font-size:clamp(1.5rem,3vw,2rem);">Volume & <em>Hybrid Lash</em> Courses</h3>
+      <p class="section-body">Prerequisite: Classic certification or equivalent experience.</p>
+    </div>
+    <div class="courses-grid" style="margin-bottom:2px;">
+      <div class="course-card reveal">
+        <p class="course-tag">Volume · 1:1 In-Person · 1 Day</p>
+        <h3 class="course-name">Volume/Hybrid — Full In-Person</h3>
+        <p class="course-desc">One intensive in-person day with a live model included. Master handmade fans, Russian volume, and hybrid sets with direct hands-on guidance.</p>
+        <ul class="course-includes">
+          <li>1-day intensive, 1:1 with Coralee</li>
+          <li>One live model included</li>
+          <li>Volume & hybrid fan techniques</li>
+          <li>Starter kit ($100+ value) included</li>
+          <li>Certificate of completion</li>
+        </ul>
+        <div class="course-footer">
+          <div class="course-price">$600 <span>$300 deposit to book</span></div>
+          <a href="#book" class="btn-sm">Enrol Now</a>
+        </div>
+      </div>
+
+      <div class="course-card reveal">
+        <p class="course-tag">Volume · Hybrid · Half Day + Virtual</p>
+        <h3 class="course-name">Volume/Hybrid — Hybrid</h3>
+        <p class="course-desc">Self-paced textbook and theory, then a half-day in person with one live model. Flexible format, full certification.</p>
+        <ul class="course-includes">
+          <li>Textbook & theory — self-paced</li>
+          <li>Half-day in-person with one model</li>
+          <li>Virtual support throughout</li>
+          <li>Starter kit ($100+ value) included</li>
+          <li>Certificate of completion</li>
+        </ul>
+        <div class="course-footer">
+          <div class="course-price">$500 <span>$200 deposit to book</span></div>
+          <a href="#book" class="btn-sm">Enrol Now</a>
+        </div>
+      </div>
+
+      <div class="course-card reveal">
+        <p class="course-tag">Volume · Fully Virtual</p>
+        <h3 class="course-name">Volume/Hybrid — Virtual</h3>
+        <p class="course-desc">Fully self-paced. Kit and textbook mailed to you, optional Q&A call, submit models via photos/video for feedback and certification.</p>
+        <ul class="course-includes">
+          <li>Hard copy textbook mailed to you</li>
+          <li>Starter kit ($100+ value) mailed out</li>
+          <li>Optional Q&A call</li>
+          <li>Submit models via photos/video</li>
+          <li>Certificate of completion</li>
+        </ul>
+        <div class="course-footer">
+          <div class="course-price">$400 <span>Payment in full</span></div>
+          <a href="#book" class="btn-sm">Enrol Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUNDLES & ADD-ONS -->
+    <div style="padding:3rem 0 1rem;">
+      <p class="section-label">Bundles & Add-Ons</p>
+      <h3 class="section-title" style="font-size:clamp(1.5rem,3vw,2rem);">Save More, <em>Learn More</em></h3>
+    </div>
+    <div class="courses-grid">
+      <div class="course-card reveal" style="border-color:rgba(201,169,110,0.35);">
+        <p class="course-tag">Best Value · Classic + Volume Bundle</p>
+        <h3 class="course-name">Classic & Volume Together</h3>
+        <p class="course-desc">Book both Classic and Volume/Hybrid courses together and save $300. Choose your preferred format (in-person, hybrid, or virtual) for each. Dual certification upon completion.</p>
+        <ul class="course-includes">
+          <li>Full Classic course (your choice of format)</li>
+          <li>Full Volume/Hybrid course (your choice of format)</li>
+          <li>Both starter kits included</li>
+          <li>Dual certification</li>
+          <li>$300 off combined price</li>
+        </ul>
+        <div class="course-footer">
+          <div class="course-price">Save $300 <span>Contact for bundle total</span></div>
+          <a href="#contact" class="btn-sm">Enquire Now</a>
+        </div>
+      </div>
+
+      <div class="course-card reveal">
+        <p class="course-tag">Virtual Only · Lash Lift & Tint</p>
+        <h3 class="course-name">Lash Lift & Tint Course</h3>
+        <p class="course-desc">A complete virtual course in lash lifting and tinting. Kit mailed to you, self-paced learning, certification included.</p>
+        <ul class="course-includes">
+          <li>Full virtual course — self-paced</li>
+          <li>Starter kit included ($400 option)</li>
+          <li>Certificate of completion</li>
+        </ul>
+        <div class="course-footer">
+          <div class="course-price">$400 <span>with kit · $250 without kit</span></div>
+          <a href="#book" class="btn-sm">Enrol Now</a>
+        </div>
+      </div>
+
+      <div class="course-card reveal">
+        <p class="course-tag">Virtual Only · Brow Lamination</p>
+        <h3 class="course-name">Brow Lamination Course</h3>
+        <p class="course-desc">Master brow lamination at your own pace. Full virtual course with kit option. Everything you need to add this high-demand service to your menu.</p>
+        <ul class="course-includes">
+          <li>Full virtual course — self-paced</li>
+          <li>Starter kit included ($400 option)</li>
+          <li>Certificate of completion</li>
+        </ul>
+        <div class="course-footer">
+          <div class="course-price">$400 <span>with kit · $250 without kit</span></div>
+          <a href="#book" class="btn-sm">Enrol Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="included-banner" style="margin-top:2px;">
+      <div class="included-item reveal"><div class="included-icon">💆</div><div class="included-title">Lash Lift + Brow Bundle</div><div class="included-sub">$600 with kits · $400 without</div></div>
+      <div class="included-item reveal"><div class="included-icon">🎓</div><div class="included-title">Certification</div><div class="included-sub">All courses</div></div>
+      <div class="included-item reveal"><div class="included-icon">🧰</div><div class="included-title">Kits Mailed</div><div class="included-sub">Virtual students</div></div>
+      <div class="included-item reveal"><div class="included-icon">🤝</div><div class="included-title">Follow-Up Support</div><div class="included-sub">After every course</div></div>
+      <div class="included-item reveal"><div class="included-icon">📱</div><div class="included-title">Flexible Format</div><div class="included-sub">In-person, hybrid, or virtual</div></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="gallery-header">
+      <p class="section-label">Our Work</p>
+      <h2 class="section-title">The <em>Results</em> Speak</h2>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Images load via JS / replace src with real photos -->
+      <div class="gallery-item" data-index="0">
+        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80&auto=format&fit=crop" alt="Lash work 1" loading="lazy" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" data-index="1">
+        <img src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?w=600&q=80&auto=format&fit=crop" alt="Lash work 2" loading="lazy" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" data-index="2">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80&auto=format&fit=crop" alt="Lash work 3" loading="lazy" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" data-index="3">
+        <img src="https://images.unsplash.com/photo-1512207736890-6ffed8a84e8d?w=600&q=80&auto=format&fit=crop" alt="Lash work 4" loading="lazy" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" data-index="4">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80&auto=format&fit=crop" alt="Lash work 5" loading="lazy" />
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="https://www.instagram.com/" target="_blank" class="btn-outline">See More on Instagram</a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div>
+      <p class="section-label">Student Reviews</p>
+      <h2 class="section-title">What Our Students<br /><em>Are Saying</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The Classic course completely changed my career trajectory. Coralee is an incredible instructor — patient, thorough, and genuinely invested in your success. I booked my first paying client the week after."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">S</div>
+          <div>
+            <div class="author-name">Sarah M.</div>
+            <div class="author-title">Classic Lash Graduate</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I came in with zero lash experience and left with a full kit, a certificate, and the confidence to start my own thing. The two weeks of follow-up support after was honestly the best part — she never left me hanging."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">T</div>
+          <div>
+            <div class="author-name">Talia R.</div>
+            <div class="author-title">Classic & Volume Bundle Graduate</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I've taken courses elsewhere and nothing compared to this. Small class size, hands-on practice with real models, and actual feedback — not just watching demos. Worth every penny."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">J</div>
+          <div>
+            <div class="author-name">Jade K.</div>
+            <div class="author-title">Volume Lash Graduate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="process">
+    <div style="max-width:600px;">
+      <p class="section-label">The Process</p>
+      <h2 class="section-title">From Enrolment<br />to <em>Career-Ready</em></h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-number">01</div>
+        <div class="step-title">Choose Your Program</div>
+        <p class="step-desc">Browse our offerings and select the course that fits your goals and experience level. Not sure where to start? Reach out — we'll guide you.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-number">02</div>
+        <div class="step-title">Book & Confirm</div>
+        <p class="step-desc">Secure your spot through our online booking system or by contacting us directly. Class dates are limited — spots go fast.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-number">03</div>
+        <div class="step-title">Attend Your Course</div>
+        <p class="step-desc">Show up ready to learn. Two intensive days of hands-on training with real models, live feedback, and everything you need — provided.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-number">04</div>
+        <div class="step-title">Certify & Launch</div>
+        <p class="step-desc">Walk away with your certificate, your kit, and the confidence to take on paying clients immediately. Your career starts now.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <p class="section-label">Common Questions</p>
+    <h2 class="section-title">Frequently Asked<br /><em>Questions</em></h2>
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <button class="faq-question">Do I need an esthetics license to enrol?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>No esthetics license is required to take our courses. However, you must either be a licensed esthetician or currently enrolled in an esthetics program. If you're unsure whether you qualify, reach out and we'll confirm your eligibility.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is everything I need included in the course fee?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes. Every course includes a complete professional starter kit with all the tools and products you'll need to begin applying lash extensions immediately after graduation. The kit is yours to keep.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What does the 2-week follow-up include?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>After your course, you have two weeks to reach out with questions, troubleshoot retention issues on your first real clients, and get guidance on tricky lash situations. Think of it as a safety net as you launch your new skills.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How many students are in each class?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>We keep class sizes very small — intentionally. This ensures every student receives personalized attention, real feedback, and ample practice time. You won't get lost in a crowd here.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do I need to bring my own model?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Models are arranged for your practical sessions, but you're welcome to bring your own if you prefer. We'll confirm all logistics after you book your course date.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is the certification recognized professionally?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes. Upon successful completion of your course, you'll receive a certificate of completion. We encourage graduates to also pursue insurance-recognized certifications — our training prepares you fully for those programs.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I book a lash appointment (not a course)?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Absolutely. Coralee also takes in-person lash appointments for clients looking for a full set, fills, or a lash consultation. Use the booking section below or contact us directly to schedule.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What if I have more questions before I commit?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Just reach out through the contact form or send us a message on Instagram. We're happy to answer any questions and help you decide if the program is the right fit before you book.</p></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOOK -->
+  <section id="book">
+    <div class="book-inner">
+      <p class="section-label">Appointments & Enrolment</p>
+      <h2 class="section-title" style="max-width:100%;">Ready to <em>Get Started?</em></h2>
+      <div class="divider" style="margin:1.5rem auto;"></div>
+      <p class="section-body" style="margin:0 auto;text-align:center;">
+        Whether you're enrolling in a course or booking a lash appointment, select the option below and we'll get you sorted.
+      </p>
+      <div class="book-options">
+        <div class="book-card reveal">
+          <p class="course-tag">For Students</p>
+          <h3 class="book-card-title">Course Enrolment</h3>
+          <p class="book-card-desc">Ready to start your lash career? Reach out to reserve your spot — in-person, hybrid, or virtual formats available. Spaces are limited.</p>
+          <a href="#contact" class="btn-primary">Enquire Now</a>
+        </div>
+        <div class="book-card reveal">
+          <p class="course-tag">For Clients</p>
+          <h3 class="book-card-title">Lash Appointment</h3>
+          <p class="book-card-desc">Looking to book a lash set, fill, or consultation? Reach out directly via the form, email, or phone and we'll get you scheduled.</p>
+          <a href="#contact" class="btn-outline">Book an Appointment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div>
+      <p class="section-label">Get in Touch</p>
+      <h2 class="section-title">Questions?<br /><em>We're Here.</em></h2>
+      <div class="divider"></div>
+      <p class="section-body">
+        Have a question about a course, upcoming dates, or which program is right for you? Reach out — we respond to all enquiries promptly.
+      </p>
+      <div class="contact-info" style="margin-top:2.5rem;">
+        <div class="contact-block">
+          <span class="contact-block-label">Location</span>
+          <span class="contact-block-value">Yorkton, Saskatchewan</span>
+          <span class="contact-block-sub">In-person training · exact address provided upon booking</span>
+        </div>
+        <div class="contact-block">
+          <span class="contact-block-label">Email</span>
+          <span class="contact-block-value">Esmeesthetics2@gmail.com</span>
+        </div>
+        <div class="contact-block">
+          <span class="contact-block-label">Phone</span>
+          <span class="contact-block-value">306-526-4982</span>
+        </div>
+        <div class="contact-block">
+          <span class="contact-block-label">Follow Coralee</span>
+          <div class="social-links">
+            <a href="https://www.instagram.com/esmeestheticsandacademy?igsh=MWMzdDRwZ29oMzdvaA%3D%3D&utm_source=qr" target="_blank" class="social-link">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/Esmeesthetics2@gmail.com" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" name="first_name" placeholder="First name" required />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="last_name" placeholder="Last name" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label>Phone Number (optional)</label>
+          <input type="tel" name="phone" placeholder="+1 (000) 000-0000" />
+        </div>
+        <div class="form-group">
+          <label>I'm Interested In</label>
+          <select name="interest" required>
+            <option value="">Select an option</option>
+            <option>Classic Lash Certification</option>
+            <option>Volume Lash Certification</option>
+            <option>Classic & Volume Bundle</option>
+            <option>Booking a Lash Appointment</option>
+            <option>General Enquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" placeholder="Tell us a bit about yourself or your question..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;cursor:pointer;">Send Enquiry</button>
+        <p class="form-note">We typically respond within 24 hours.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Esmè <span>Academy</span></div>
+    <p>© 2026 Esmè Academy · Coralee · Yorkton, Saskatchewan</p>
+    <ul class="footer-links">
+      <li><a href="#academy">Courses</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#book">Book</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    // ── MOBILE NAV ──
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    // ── SCROLL REVEAL ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── FAQ ACCORDION ──
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        const isOpen = btn.classList.contains('open');
+        // close all
+        document.querySelectorAll('.faq-question').forEach(b => {
+          b.classList.remove('open');
+          b.nextElementSibling.classList.remove('open');
+        });
+        if (!isOpen) {
+          btn.classList.add('open');
+          answer.classList.add('open');
+        }
+      });
+    });
+
+    // ── GALLERY LIGHTBOX ──
+    const galleryImgs = [...document.querySelectorAll('.gallery-item img')].map(i => i.src);
+    let currentImg = 0;
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+
+    function openLightbox(idx) {
+      currentImg = idx;
+      lbImg.src = galleryImgs[idx];
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.gallery-item').forEach((item, i) => {
+      item.addEventListener('click', () => openLightbox(i));
+    });
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.getElementById('lbPrev').addEventListener('click', () => {
+      currentImg = (currentImg - 1 + galleryImgs.length) % galleryImgs.length;
+      lbImg.src = galleryImgs[currentImg];
+    });
+    document.getElementById('lbNext').addEventListener('click', () => {
+      currentImg = (currentImg + 1) % galleryImgs.length;
+      lbImg.src = galleryImgs[currentImg];
+    });
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') document.getElementById('lbPrev').click();
+      if (e.key === 'ArrowRight') document.getElementById('lbNext').click();
+    });
+
+    // ── CONTACT FORM (Formspree) ──
+    const form = document.getElementById('contactForm');
+    const toast = document.getElementById('toast');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type=submit]');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.reset();
+          toast.classList.add('show');
+          setTimeout(() => toast.classList.remove('show'), 5000);
+        } else {
+          alert('Something went wrong. Please email us directly at Esmeesthetics2@gmail.com');
+        }
+      } catch {
+        alert('Network error. Please email us directly at Esmeesthetics2@gmail.com');
+      }
+      btn.textContent = 'Send Enquiry';
+      btn.disabled = false;
+    });
+  </script>
+</body>
+</html>
