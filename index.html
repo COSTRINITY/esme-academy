@@ -123,10 +123,26 @@
         radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,169,110,0.04) 0%, transparent 60%);
     }
     .hero-line {
-      display: block;
-      width: 1px; height: 70px;
-      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
       margin: 0 auto 2.5rem;
+      color: var(--gold);
+      opacity: 0.7;
+      font-size: 0.55rem;
+      letter-spacing: 0.5em;
+    }
+    .hero-line::before,
+    .hero-line::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold));
+    }
+    .hero-line::after {
+      background: linear-gradient(to left, transparent, var(--gold));
     }
     .hero-eyebrow {
       font-size: 0.72rem;
@@ -620,7 +636,7 @@
   <section id="home">
     <div class="hero-bg"></div>
     <div style="position:relative;z-index:1;">
-      <span class="hero-line"></span>
+      <span class="hero-line">✦</span>
       <p class="hero-eyebrow">Lash & Esthetics Education · Yorkton, Saskatchewan</p>
       <h1 class="hero-title">
         Master the Art<br />of <em>Lash Excellence</em>
